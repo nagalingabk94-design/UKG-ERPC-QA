@@ -1,0 +1,17 @@
+{
+  "name": "QA-Sdev",
+  "slug": "sdev",
+  "baseURL": "https://ukgsf--sdev.sandbox.lightning.force.com/lightning/page/home",
+  "username": "nagalingab.kammar@ukg.com.sdev",
+  "password": "UKGJune01@2026",
+  "browser": "chromium",
+  "headless": true,
+  "timeout": 30000,
+  "actionTimeout": 10000,
+  "retries": 0,
+  "fullyParallel": false,
+  "workers": 1,
+  "video": "retain-on-failure",
+  "trace": "retain-on-failure",
+  "screenshot": "only-on-failure"
+}

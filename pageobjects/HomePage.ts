@@ -327,6 +327,7 @@ export class HomePage {
     hereAreSome: { strategy: 'text' as const, value: '​ here are some additional resources related to', actionKind: 'text' as const },
     viewMorePosts: { strategy: 'role' as const, value: 'View More Posts', role: 'button', actionKind: 'button' as const },
     accountName: { strategy: 'text' as const, value: 'Account Name', actionKind: 'button' as const },
+    loginField: { strategy: 'text' as const, value: 'Login field', actionKind: 'button' as const },
   } as const;
 
   readonly sldsTable1: WebTable; // columns: ["Item Number", "", "Sort Due Date Sorted Ascending Show Due Date Column Actions", "Sort Subject Show Subject Column Actions", "Sort Name Show Name Column Actions", "Sort Related To Show Related To Column Actions", "Sort UKG Activity Type Show UKG Activity Type Column Actions", "Sort Type Detail Show Type Detail Column Actions", "Sort Disposition Show Disposition Column Actions", "Sort Priority Show Priority Column Actions", "Sort Status Show Status Column Actions", "Sort Last Modified By Alias Show Last Modified By Alias Column Actions", "Action"]
@@ -17894,6 +17895,67 @@ export class HomePage {
 
   async scrollAccountNameIntoView(): Promise<void> {
     await scrollIntoViewWhenVisible(webLocator(this.page, HomePage.L.accountName));
+  }
+
+
+  async clickLoginField(): Promise<void> {
+    await clickWhenVisible(webLocator(this.page, HomePage.L.loginField));
+  }
+
+  async doubleClickLoginField(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, HomePage.L.loginField));
+  }
+
+  async longPressLoginField(): Promise<void> {
+    await longPressWhenVisible(webLocator(this.page, HomePage.L.loginField));
+  }
+
+  async expectLoginFieldVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, HomePage.L.loginField), expected, timeoutMs);
+  }
+
+  async expectLoginFieldContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, HomePage.L.loginField), substring, timeoutMs);
+  }
+
+  async expectLoginFieldValue(value: string, timeoutMs = 30_000): Promise<void> {
+    await expectValue(webLocator(this.page, HomePage.L.loginField), value, timeoutMs);
+  }
+
+  async expectLoginFieldEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldChecked(timeoutMs = 30_000): Promise<void> {
+    await expectChecked(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldUnchecked(timeoutMs = 30_000): Promise<void> {
+    await expectUnchecked(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldFocused(timeoutMs = 30_000): Promise<void> {
+    await expectFocused(webLocator(this.page, HomePage.L.loginField), timeoutMs);
+  }
+
+  async expectLoginFieldCount(count: number, timeoutMs = 30_000): Promise<void> {
+    await expectCount(webLocator(this.page, HomePage.L.loginField), count, timeoutMs);
+  }
+
+  async scrollLoginFieldIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, HomePage.L.loginField));
   }
 
 }

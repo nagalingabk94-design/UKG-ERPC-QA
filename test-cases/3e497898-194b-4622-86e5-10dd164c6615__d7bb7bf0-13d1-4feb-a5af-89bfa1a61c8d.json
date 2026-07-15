@@ -1,0 +1,30 @@
+{
+  "id": "d7bb7bf0-13d1-4feb-a5af-89bfa1a61c8d",
+  "testPlanId": "3e497898-194b-4622-86e5-10dd164c6615",
+  "requirementId": "dee268d3-04b2-4a29-a88b-c962ebb34186",
+  "suiteName": "Login to SF",
+  "case": {
+    "id": "d7bb7bf0-13d1-4feb-a5af-89bfa1a61c8d",
+    "title": "login",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [
+      "open SF URL",
+      "click on login using SSO button",
+      "enter the UKG credentials from the environment details",
+      "do authentication",
+      "verify if home page is displayed search on global search field for Home Creations",
+      "verify if account axists"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "tap",
+        "targetDescription": "Login"
+      }
+    ],
+    "tags": []
+  }
+}

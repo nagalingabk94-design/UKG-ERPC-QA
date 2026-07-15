@@ -1,0 +1,59 @@
+{
+  "id": "99d0d056-788d-4dd9-8bbc-43ba38da2013",
+  "testPlanId": "6d629b80-98db-444b-bb5e-97cc20d452d3",
+  "requirementId": "9478227f-ac6b-455c-9d7d-7877e293f4ca",
+  "suiteName": "SF: Open Account 'Home creations'",
+  "case": {
+    "id": "99d0d056-788d-4dd9-8bbc-43ba38da2013",
+    "title": "Open 'Home creations' via Home page Recent Records",
+    "priority": "P2",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-open-home",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Salesforce Home",
+        "value": "/lightning/page/home"
+      },
+      {
+        "id": "step-home-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify Home is visible",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectHomeVisible"
+      },
+      {
+        "id": "step-open-recent-records",
+        "action": "tap",
+        "targetDescription": "Click 'View All Recent Records'",
+        "screenName": "HomePage",
+        "pageObjectMethod": "clickViewAllRecentRecords"
+      },
+      {
+        "id": "step-wait-recent-list",
+        "action": "wait",
+        "targetDescription": "Wait for recent records list to render",
+        "value": "1500"
+      },
+      {
+        "id": "step-open-account-from-recents",
+        "action": "tap",
+        "targetDescription": "Open account 'Home creations' from recent records",
+        "locatorHint": "role=link[name=\"Home creations\"]"
+      },
+      {
+        "id": "step-assert-account-header",
+        "action": "assertVisible",
+        "targetDescription": "Verify account record header shows 'Home creations'",
+        "locatorHint": "role=heading[name=\"Home creations\"]"
+      }
+    ],
+    "tags": [
+      "@functional",
+      "@regression"
+    ]
+  }
+}

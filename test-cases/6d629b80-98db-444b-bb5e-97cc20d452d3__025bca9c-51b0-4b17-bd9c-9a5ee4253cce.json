@@ -1,0 +1,66 @@
+{
+  "id": "025bca9c-51b0-4b17-bd9c-9a5ee4253cce",
+  "testPlanId": "6d629b80-98db-444b-bb5e-97cc20d452d3",
+  "requirementId": "9478227f-ac6b-455c-9d7d-7877e293f4ca",
+  "suiteName": "SF: Open Account 'Home creations'",
+  "case": {
+    "id": "025bca9c-51b0-4b17-bd9c-9a5ee4253cce",
+    "title": "Open 'Home creations' via Global Search",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-open-home",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Salesforce Home",
+        "value": "/lightning/page/home"
+      },
+      {
+        "id": "step-open-global-search",
+        "action": "tap",
+        "targetDescription": "Open global search",
+        "screenName": "HomePage",
+        "pageObjectMethod": "clickSearch"
+      },
+      {
+        "id": "step-global-search-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify global search is visible",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectSearchVisible"
+      },
+      {
+        "id": "step-type-query",
+        "action": "typeText",
+        "targetDescription": "Type 'Home creations' and submit in global search",
+        "locatorHint": "role=combobox[name=\"Search...\"]",
+        "value": "Home creations{Enter}"
+      },
+      {
+        "id": "step-wait-results",
+        "action": "wait",
+        "targetDescription": "Wait for search results to load",
+        "value": "2000"
+      },
+      {
+        "id": "step-open-result",
+        "action": "tap",
+        "targetDescription": "Open 'Home creations' from search results",
+        "locatorHint": "role=link[name=\"Home creations\"]"
+      },
+      {
+        "id": "step-assert-account-header",
+        "action": "assertVisible",
+        "targetDescription": "Verify account record header shows 'Home creations'",
+        "locatorHint": "role=heading[name=\"Home creations\"]"
+      }
+    ],
+    "tags": [
+      "@functional",
+      "@regression"
+    ]
+  }
+}

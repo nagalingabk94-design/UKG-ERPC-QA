@@ -1,0 +1,88 @@
+{
+  "id": "cf33bf88-67ac-4dd0-a773-609e358aa40e",
+  "testPlanId": "6d629b80-98db-444b-bb5e-97cc20d452d3",
+  "requirementId": "9478227f-ac6b-455c-9d7d-7877e293f4ca",
+  "suiteName": "SF: Open Account 'Home creations'",
+  "case": {
+    "id": "cf33bf88-67ac-4dd0-a773-609e358aa40e",
+    "title": "Open 'Home creations' via Accounts tab and Search This List",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-open-home",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Salesforce Home",
+        "value": "/lightning/page/home"
+      },
+      {
+        "id": "step-home-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify Home is visible",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectHomeVisible"
+      },
+      {
+        "id": "step-nav-accounts",
+        "action": "tap",
+        "targetDescription": "Open Accounts from nav",
+        "screenName": "HomePage",
+        "pageObjectMethod": "clickAccounts"
+      },
+      {
+        "id": "step-accounts-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify Accounts page loaded",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectAccountsVisible"
+      },
+      {
+        "id": "step-accounts-list-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify Accounts list is visible",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectAccountsListVisible"
+      },
+      {
+        "id": "step-search-list-visible",
+        "action": "assertVisible",
+        "targetDescription": "Verify 'Search this list' input is visible",
+        "screenName": "HomePage",
+        "pageObjectMethod": "expectSearchThisListVisible"
+      },
+      {
+        "id": "step-search-fill",
+        "action": "fill",
+        "targetDescription": "Enter account name in 'Search this list'",
+        "screenName": "HomePage",
+        "pageObjectMethod": "fillSearchThisList",
+        "value": "Home creations"
+      },
+      {
+        "id": "step-wait-results",
+        "action": "wait",
+        "targetDescription": "Wait for filtered list to update",
+        "value": "1500"
+      },
+      {
+        "id": "step-open-account",
+        "action": "tap",
+        "targetDescription": "Open account link 'Home creations'",
+        "locatorHint": "role=link[name=\"Home creations\"]"
+      },
+      {
+        "id": "step-assert-account-header",
+        "action": "assertVisible",
+        "targetDescription": "Verify account record header shows 'Home creations'",
+        "locatorHint": "role=heading[name=\"Home creations\"]"
+      }
+    ],
+    "tags": [
+      "@functional",
+      "@regression"
+    ]
+  }
+}

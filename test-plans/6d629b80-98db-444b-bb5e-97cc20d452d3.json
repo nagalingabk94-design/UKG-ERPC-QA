@@ -1,0 +1,225 @@
+{
+  "id": "6d629b80-98db-444b-bb5e-97cc20d452d3",
+  "requirementId": "9478227f-ac6b-455c-9d7d-7877e293f4ca",
+  "model": "gpt-5",
+  "createdAt": "2026-07-15T05:34:48.280Z",
+  "plan": {
+    "version": 1,
+    "suiteName": "SF: Open Account 'Home creations'",
+    "cases": [
+      {
+        "id": "cf33bf88-67ac-4dd0-a773-609e358aa40e",
+        "title": "Open 'Home creations' via Accounts tab and Search This List",
+        "priority": "P0",
+        "platforms": [
+          "chrome"
+        ],
+        "preconditions": [],
+        "steps": [
+          {
+            "id": "step-open-home",
+            "action": "openUrl",
+            "targetDescription": "Navigate to Salesforce Home",
+            "value": "/lightning/page/home"
+          },
+          {
+            "id": "step-home-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify Home is visible",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectHomeVisible"
+          },
+          {
+            "id": "step-nav-accounts",
+            "action": "tap",
+            "targetDescription": "Open Accounts from nav",
+            "screenName": "HomePage",
+            "pageObjectMethod": "clickAccounts"
+          },
+          {
+            "id": "step-accounts-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify Accounts page loaded",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectAccountsVisible"
+          },
+          {
+            "id": "step-accounts-list-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify Accounts list is visible",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectAccountsListVisible"
+          },
+          {
+            "id": "step-search-list-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify 'Search this list' input is visible",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectSearchThisListVisible"
+          },
+          {
+            "id": "step-search-fill",
+            "action": "fill",
+            "targetDescription": "Enter account name in 'Search this list'",
+            "screenName": "HomePage",
+            "pageObjectMethod": "fillSearchThisList",
+            "value": "Home creations"
+          },
+          {
+            "id": "step-wait-results",
+            "action": "wait",
+            "targetDescription": "Wait for filtered list to update",
+            "value": "1500"
+          },
+          {
+            "id": "step-open-account",
+            "action": "tap",
+            "targetDescription": "Open account link 'Home creations'",
+            "locatorHint": "role=link[name=\"Home creations\"]"
+          },
+          {
+            "id": "step-assert-account-header",
+            "action": "assertVisible",
+            "targetDescription": "Verify account record header shows 'Home creations'",
+            "locatorHint": "role=heading[name=\"Home creations\"]"
+          }
+        ],
+        "tags": [
+          "@functional",
+          "@regression"
+        ]
+      },
+      {
+        "id": "025bca9c-51b0-4b17-bd9c-9a5ee4253cce",
+        "title": "Open 'Home creations' via Global Search",
+        "priority": "P1",
+        "platforms": [
+          "chrome"
+        ],
+        "preconditions": [],
+        "steps": [
+          {
+            "id": "step-open-home",
+            "action": "openUrl",
+            "targetDescription": "Navigate to Salesforce Home",
+            "value": "/lightning/page/home"
+          },
+          {
+            "id": "step-open-global-search",
+            "action": "tap",
+            "targetDescription": "Open global search",
+            "screenName": "HomePage",
+            "pageObjectMethod": "clickSearch"
+          },
+          {
+            "id": "step-global-search-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify global search is visible",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectSearchVisible"
+          },
+          {
+            "id": "step-type-query",
+            "action": "typeText",
+            "targetDescription": "Type 'Home creations' and submit in global search",
+            "locatorHint": "role=combobox[name=\"Search...\"]",
+            "value": "Home creations{Enter}"
+          },
+          {
+            "id": "step-wait-results",
+            "action": "wait",
+            "targetDescription": "Wait for search results to load",
+            "value": "2000"
+          },
+          {
+            "id": "step-open-result",
+            "action": "tap",
+            "targetDescription": "Open 'Home creations' from search results",
+            "locatorHint": "role=link[name=\"Home creations\"]"
+          },
+          {
+            "id": "step-assert-account-header",
+            "action": "assertVisible",
+            "targetDescription": "Verify account record header shows 'Home creations'",
+            "locatorHint": "role=heading[name=\"Home creations\"]"
+          }
+        ],
+        "tags": [
+          "@functional",
+          "@regression"
+        ]
+      },
+      {
+        "id": "99d0d056-788d-4dd9-8bbc-43ba38da2013",
+        "title": "Open 'Home creations' via Home page Recent Records",
+        "priority": "P2",
+        "platforms": [
+          "chrome"
+        ],
+        "preconditions": [],
+        "steps": [
+          {
+            "id": "step-open-home",
+            "action": "openUrl",
+            "targetDescription": "Navigate to Salesforce Home",
+            "value": "/lightning/page/home"
+          },
+          {
+            "id": "step-home-visible",
+            "action": "assertVisible",
+            "targetDescription": "Verify Home is visible",
+            "screenName": "HomePage",
+            "pageObjectMethod": "expectHomeVisible"
+          },
+          {
+            "id": "step-open-recent-records",
+            "action": "tap",
+            "targetDescription": "Click 'View All Recent Records'",
+            "screenName": "HomePage",
+            "pageObjectMethod": "clickViewAllRecentRecords"
+          },
+          {
+            "id": "step-wait-recent-list",
+            "action": "wait",
+            "targetDescription": "Wait for recent records list to render",
+            "value": "1500"
+          },
+          {
+            "id": "step-open-account-from-recents",
+            "action": "tap",
+            "targetDescription": "Open account 'Home creations' from recent records",
+            "locatorHint": "role=link[name=\"Home creations\"]"
+          },
+          {
+            "id": "step-assert-account-header",
+            "action": "assertVisible",
+            "targetDescription": "Verify account record header shows 'Home creations'",
+            "locatorHint": "role=heading[name=\"Home creations\"]"
+          }
+        ],
+        "tags": [
+          "@functional",
+          "@regression"
+        ]
+      },
+      {
+        "id": "2ee6f249-3007-40cb-8f89-5bddb9105e9a",
+        "title": "SF login",
+        "priority": "P1",
+        "platforms": [
+          "chrome"
+        ],
+        "preconditions": [],
+        "steps": [
+          {
+            "id": "step1",
+            "action": "tap",
+            "targetDescription": "Account Name",
+            "screenName": "Home"
+          }
+        ],
+        "tags": []
+      }
+    ]
+  }
+}

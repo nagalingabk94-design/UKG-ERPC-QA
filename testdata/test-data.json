@@ -1,1 +1,8 @@
-{}
+{
+  "openHomeCreationsViaAccountsTabAndSearchThisList": {
+    "enterAccountNameInSearchThisList": "Home creations"
+  },
+  "openHomeCreationsViaGlobalSearch": {
+    "typeHomeCreationsAndSubmitInGlobalSearch": "Home creations{Enter}"
+  }
+}

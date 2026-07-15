@@ -1,6 +1,4 @@
 {
-  "name": "QA-Sdev",
-  "slug": "sdev",
   "baseURL": "https://ukgsf--sdev.sandbox.lightning.force.com/lightning/page/home",
   "username": "nagalingab.kammar@ukg.com.sdev",
   "password": "UKGJune01@2026",

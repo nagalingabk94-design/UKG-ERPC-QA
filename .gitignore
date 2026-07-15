@@ -10,6 +10,7 @@ logs/*.zip
 
 # Cloud execution — contain credentials, never commit
 execution/.env.execution
+execution/.env.database
 browserstack.yml
 
 # Auth state — contains session cookies/tokens, never commit
@@ -17,4 +18,3 @@ browserstack.yml
 
 # Recorder artifacts
 .dom-captures/
-.git-users/

@@ -201,24 +201,6 @@
           "@functional",
           "@regression"
         ]
-      },
-      {
-        "id": "2ee6f249-3007-40cb-8f89-5bddb9105e9a",
-        "title": "SF login",
-        "priority": "P1",
-        "platforms": [
-          "chrome"
-        ],
-        "preconditions": [],
-        "steps": [
-          {
-            "id": "step1",
-            "action": "tap",
-            "targetDescription": "Account Name",
-            "screenName": "Home"
-          }
-        ],
-        "tags": []
       }
     ]
   }
